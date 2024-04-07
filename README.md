@@ -1,16 +1,40 @@
-# banco_veraz
+# Projeto Avaliativo Flutter - Banco Veraz
 
-A new Flutter project.
+Este projeto é uma aplicação Flutter para um sistema bancário fictício chamado Banco Veraz.
 
-## Getting Started
+## Sobre o Projeto
 
-This project is a starting point for a Flutter application.
+O Banco Veraz é uma aplicação que permite aos usuários realizar transferências de valores e cadastrar contatos. Ele utiliza o Flutter como framework de desenvolvimento para criar interfaces de usuário elegantes e responsivas.
 
-A few resources to get you started if this is your first Flutter project:
+## Funcionalidades
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Cadastro de contatos: os usuários podem cadastrar informações de contato, como nome, endereço, telefone, e-mail e CPF.
+- Transferências: os usuários podem realizar transferências de valores para outros contatos cadastrados.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Como Começar
+
+Para começar a desenvolver com o projeto Banco Veraz, siga estas etapas:
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/rafaelchioca/Projeto-Avaliativo-Flutter.git
+```
+
+2. Navegue até o diretório do projeto:
+
+```bash
+cd Projeto-Avaliativo-Flutter
+```
+
+3. Instale as dependências:
+
+```bash
+flutter pub get
+```
+
+4. Execute o aplicativo:
+
+```bash
+flutter run
+```
