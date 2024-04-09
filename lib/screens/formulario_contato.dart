@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 
 class FormularioContato extends StatelessWidget {
   final TextEditingController _controladorCampoNome = TextEditingController();
-  final TextEditingController _controladorCampoEndereco = TextEditingController();
-  final TextEditingController _controladorCampoTelefone = TextEditingController();
+  final TextEditingController _controladorCampoEndereco =
+      TextEditingController();
+  final TextEditingController _controladorCampoTelefone =
+      TextEditingController();
   final TextEditingController _controladorCampoEmail = TextEditingController();
   final TextEditingController _controladorCampoCPF = TextEditingController();
 
@@ -14,83 +16,86 @@ class FormularioContato extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.indigo[900],
-        title: const Text(
-          'Novo Contato',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
+        appBar: AppBar(
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.indigo[900],
+          title: const Text(
+            'Novo Contato',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-      ),
-      body: Container(
-        color: Colors.black87,
-        child: Column(
-          children: [
-            Editor(
-              controlador: _controladorCampoNome,
-              rotulo: 'Nome',
-              dica: 'Nome do Contato',
-              tipoTeclado: TextInputType.text,
-            ),
-            Editor(
-              controlador: _controladorCampoEndereco,
-              rotulo: 'Endereço',
-              dica: 'Endereço do Contato',
-              icone: Icons.home,
-              tipoTeclado: TextInputType.text,
-            ),
-            Editor(
-              controlador: _controladorCampoTelefone,
-              rotulo: 'Telefone',
-              dica: 'Telefone do Contato',
-              icone: Icons.phone,
-              tipoTeclado: TextInputType.phone,
-            ),
-            Editor(
-              controlador: _controladorCampoEmail,
-              rotulo: 'E-mail',
-              dica: 'exemplo@mail.com',
-              icone: Icons.mail,
-              tipoTeclado: TextInputType.emailAddress,
-            ),
-            Editor(
-              controlador: _controladorCampoCPF,
-              rotulo: 'CPF',
-              dica: '00000000000',
-              icone: Icons.perm_identity,
-              tipoTeclado: TextInputType.text,
-            ),
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.indigo[900]),
-                foregroundColor: MaterialStateProperty.all(Colors.white),
-                overlayColor: MaterialStateProperty.all(Colors.blue[900]),
-                textStyle: MaterialStateProperty.all(
-                  const TextStyle(
-                    fontSize: 18.0,
-                  ),
+        body: SingleChildScrollView(
+          child: Container(
+            color: Colors.black87,
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              children: [
+                Editor(
+                  controlador: _controladorCampoNome,
+                  rotulo: 'Nome',
+                  dica: 'Nome do Contato',
+                  tipoTeclado: TextInputType.text,
                 ),
-              ),
-              onPressed: () {
-                _criaContato(
-                  context,
-                  _controladorCampoNome,
-                  _controladorCampoEndereco,
-                  _controladorCampoTelefone,
-                  _controladorCampoEmail,
-                  _controladorCampoCPF,
-                );
-              },
-              child: const Text('Confirmar'),
+                Editor(
+                  controlador: _controladorCampoEndereco,
+                  rotulo: 'Endereço',
+                  dica: 'Endereço do Contato',
+                  icone: Icons.home,
+                  tipoTeclado: TextInputType.text,
+                ),
+                Editor(
+                  controlador: _controladorCampoTelefone,
+                  rotulo: 'Telefone',
+                  dica: 'Telefone do Contato',
+                  icone: Icons.phone,
+                  tipoTeclado: TextInputType.phone,
+                ),
+                Editor(
+                  controlador: _controladorCampoEmail,
+                  rotulo: 'E-mail',
+                  dica: 'exemplo@mail.com',
+                  icone: Icons.mail,
+                  tipoTeclado: TextInputType.emailAddress,
+                ),
+                Editor(
+                  controlador: _controladorCampoCPF,
+                  rotulo: 'CPF',
+                  dica: '00000000000',
+                  icone: Icons.perm_identity,
+                  tipoTeclado: TextInputType.text,
+                ),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.indigo[900]),
+                    foregroundColor: MaterialStateProperty.all(Colors.white),
+                    overlayColor: MaterialStateProperty.all(Colors.blue[900]),
+                    textStyle: MaterialStateProperty.all(
+                      const TextStyle(
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    _criaContato(
+                      context,
+                      _controladorCampoNome,
+                      _controladorCampoEndereco,
+                      _controladorCampoTelefone,
+                      _controladorCampoEmail,
+                      _controladorCampoCPF,
+                    );
+                  },
+                  child: const Text('Confirmar'),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
-    );
+          ),
+        ));
   }
 
   void _criaContato(
